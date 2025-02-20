@@ -1,0 +1,4 @@
+# [ Ficheros Config -  Server ]
+Server/back_end/src/main/resources/application.properties
+# [ Dependencias App - ViteJs ]
+Front_End/bank_frontEnd/node_modules
