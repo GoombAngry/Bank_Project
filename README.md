@@ -37,5 +37,16 @@ Sigue estos pasos para ejecutar correctamente el sistema bancario:
    Dirígete a la carpeta `Bank_Project/Front_End/bank_frontEnd/` y ejecuta el siguiente comando para resolver las dependencias:
    ```bash
    npm install
+   # Para ejecutar la app
+   npm run dev
+   
+5. **Verifica la configuración de la URL del servidor**  
+   Asegúrate de que la URL del servidor esté correctamente configurada en los siguientes archivos:
+
+   - Para la aplicación web en **React**, abre el archivo `Bank_Project/Front_End/bank_frontEnd/src/utilities/utilitie.js` y asegúrate de que la URL del servidor esté bien asignada.
+   - Para la aplicación del **cajero ATM** hecha en **Swing (Java)**, abre el archivo `Bank_Project/ATM_SYSTEM/atm_bank/src/main/java/Utilidades/ControllerRequest.java` y verifica que la URL del servidor esté correctamente configurada.
+   Estas configuraciones son necesarias para que ambas aplicaciones se conecten al servidor backend sin problemas.
+
+
 
 
