@@ -1,0 +1,108 @@
+/* Estilo del Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 4%;
+}
+.header-tittle-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-image {
+  height: 43px;
+  width: 43px;
+  margin-right: 14px;
+}
+
+.tittle-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Menú para escritorio */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #575757;
+}
+
+/* Estilo para el botón del menú móvil */
+.menu-btn {
+  display: none;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Estilo del menú móvil */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #333;
+  position: fixed;
+  top: 47px;
+  left: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: left 0.5s;
+}
+
+.menu a {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+/* Botón para cerrar el menú */
+.close-btn {
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 938px) {
+  /* Mostrar el botón del menú móvil */
+  .menu-btn {
+    display: block;
+  }
+
+  /* Ocultar el menú en móviles por defecto */
+  nav {
+    display: none;
+  }
+  /* Mostrar el menú móvil cuando se activa */
+  .menu.active {
+    top: 47px;
+    left: 0px;
+  }
+}

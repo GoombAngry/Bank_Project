@@ -1,0 +1,243 @@
+.container-perfil {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  background-color: #e0e0e0;
+}
+.container-perfil-main {
+  margin: 0px auto;
+  width: 845px;
+  height: 100%;
+  background-color: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Header del perfil */
+.header-container-perfil-main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 676px;
+  background-color: #333;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.header-container-perfil-main img {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 40px;
+  padding: 5px;
+  margin-right: 40px;
+}
+.header-container-perfil-main h2 {
+  overflow: hidden;
+  color: white;
+  height: auto;
+  width: 353px;
+}
+/* Contenido de las acciones del perfil */
+.content-container-perfil-main {
+  width: 656px;
+  background-color: #333;
+  padding: 10px;
+}
+.item-content-container-perfil-main {
+  background-color: white;
+  padding: 6px;
+  margin: 7px 0px;
+  cursor: pointer;
+}
+.item-content-container-perfil-main:hover{
+  background-color: #e0e0e0;
+}
+/* Contenedor con el icono de backToPerfil */
+.containerBackToPanelPerfil{
+  width: 98%;
+  display: flex;
+  padding: 7px;
+}
+.btnBack-containerBackToPanelPerfil{
+  background-image: url('../../assets/images/icon-back.png');
+  background-size: cover; /* O "contain" si prefieres que la imagen se ajuste */
+  background-position: center;
+  width: 74px;  /* Asegúrate de que el tamaño del botón sea suficiente */
+  height: 74px;  /* Ajusta la altura */
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: white;
+}
+.btnBack-containerBackToPanelPerfil:hover{
+  background-color: #e0e0e0;
+} 
+/* Container Datos Personales */
+.containerDatosPersonales{
+  width: 98%;
+}
+.tittle-containerDatosPersonales{
+  margin-top: -10px;
+  font-size: 28px;
+  text-align: center;
+}
+.content-containerDatosPersonales{
+  margin-top: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.rowData{
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0px;
+  justify-content: space-around;
+}
+.itemData{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0px 10px;
+}
+.itemData h3{
+  font-size: 15px;
+  margin-right: 5px;
+}
+.tittle-contentAcciones{
+  margin: 14px auto 10px auto;
+  text-align: center;
+  font-size: 21px;
+  font-weight: bold;
+}
+.contentAcciones-containerDatosPersonales{
+  background-color: white;
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+  margin: 5px auto 0px auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+.btnAcciones-containerDatosPersonales{
+  padding: 8px;
+  border-radius: 11px;
+  border-style: none;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.iconBtn-containerDatosPersonales{
+  margin: 0px 4px;
+}
+@media (max-width: 848px) {
+  .container-perfil-main{
+    width: 619px;
+  }
+  .itemData h3{
+    width: 100%;
+    text-align: center;
+  }
+  .itemData{
+    flex-direction: column;
+    margin: 0px 5px;
+    padding: 6px;
+  }
+  .header-container-perfil-main{
+    width: 580px;
+  }
+  .content-container-perfil-main{
+    width: 580px;
+  }
+}
+
+@media (max-width: 623px) {
+  .container-perfil-main{
+    width: 500px;
+  }
+  .header-container-perfil-main{
+    width: 478px;
+  }
+  .header-container-perfil-main img{
+    margin-left: 10px;
+  }
+  .header-container-perfil-main h2{
+    width: 293px;
+  }
+  .content-container-perfil-main {
+    width: 458px;
+  }
+
+  .tittle-containerDatosPersonales{
+    font-size: 26px;
+  }
+  .itemData h3{
+    font-size: 13px;
+  }
+  .itemData input{
+    width: 133px;
+    max-width: 133px;
+  }
+}
+
+
+@media (max-width: 503px) {
+  .item-content-container-perfil-main h3{
+    font-size: 17px;
+  }
+  .header-container-perfil-main {
+    width: 342px;
+  }
+  .content-container-perfil-main {
+    width: 327px;
+  }
+  .header-container-perfil-main img {
+    height: 80px;
+    width: 80px;
+    margin-right: 19px;
+  }
+  .header-container-perfil-main h2 {
+    width: 212px;
+    font-size: 19px;
+  }
+  .container-perfil-main{
+    width: 360px;
+  }
+  .rowData{
+    flex-direction: column;
+  }
+  .itemData{
+    flex-direction: row;
+    margin: 6px 5px;
+  }
+  .tittle-containerDatosPersonales{
+    font-size: 23px;
+  }
+  .containerBackToPanelPerfil{
+    padding: 4px;
+  }
+  .contentAcciones-containerDatosPersonales{
+    width: 325px;
+    margin-bottom: 10px;
+  }
+  .btnAcciones-containerDatosPersonales{
+    font-size: 13px;
+  }
+  .btnBack-containerBackToPanelPerfil{
+    width: 60px;
+    height: 60px;
+  }
+}
+
+

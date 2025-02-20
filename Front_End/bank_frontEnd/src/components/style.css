@@ -1,0 +1,318 @@
+/* Esta caja es la que muestra la accion seleccionada dentro del preview Tarjeta o Cuenta Bancaria */
+.ventana-Accion {
+  background-color: #b0e0e6 ;
+  position: fixed;
+  padding: 18px 18px 18px 8px;
+  border-radius: 10px;
+  top: -100%; /* Colócalo fuera de la pantalla inicialmente (por encima) */
+  left: 50%; /* Alineado al centro horizontalmente */
+  transform: translateX(-50%); /* Para asegurarse que esté centrado */
+}
+.ventana-Accion.show {
+  top: 50%; /* Posiciona el div en el 50% de la altura de la ventana */
+  left: 50%; /* Posiciona el div en el 50% del ancho de la ventana */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Mueve el div hacia atrás de su tamaño para centrarlo */
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* Este estilo es que que define el marco donde se mostrara un mensaje de estado relacionada con las acciones del Preview Tarjeta o Cuenta Bancaria */
+.ventana-mensaje-container-preview {
+  position: fixed;
+  padding: 0px 14px;
+  border-radius: 10px;
+  top: -100%; /* Colócalo fuera de la pantalla inicialmente (por encima) */
+  left: 50%; /* Alineado al centro horizontalmente */
+  transform: translateX(-50%); /* Para asegurarse que esté centrado */
+  transition: top 1s ease; /* Transición de 1 segundo para la propiedad 'top' */
+}
+.ventana-mensaje-container-preview.success {
+  background-color: green;
+}
+.ventana-mensaje-container-preview.error {
+  background-color: red;
+}
+.ventana-mensaje-container-preview.show {
+  top: 10%; /* Posiciona el div en el 50% de la altura de la ventana */
+  left: 50%; /* Posiciona el div en el 50% del ancho de la ventana */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Mueve el div hacia atrás de su tamaño para centrarlo */
+}
+/* Estilos que defines el contendor del mensaje que se mostrara dentro de ventana-mensaje-container */
+.content-message-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 289px;
+}
+.content-message-action h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+.content-message-action p {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+.style-content-message-action {
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilos componente mostrar movimientos Tarjeta y Cuenta Bancaria */
+.header-movimiento-accion {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 15px;
+  margin-right: -8px;
+}
+.header-movimiento-accion img {
+  cursor: pointer;
+}
+.container-movimientos {
+  width: 941px;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 5px;
+  margin-right: -10px;
+}
+.header-container-movimientos {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  width: fit-content;
+  height: 40px;
+  padding: 4px 7px;
+}
+.header-container-movimientos h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-left: 12px;
+}
+.icon-container-movimientos {
+  height: 34px;
+  width: 34px;
+}
+.tittle-container-movimientos {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  margin-left: 12px;
+}
+.list-container-movimientos {
+  width: 100%;
+  background-color: black;
+}
+.table-list-container-movimientos {
+  background-color: white;
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-list-container-movimientos th,
+td {
+  border: 1px solid black;
+}
+.descripcion-movimiento {
+  text-align: left;
+}
+
+.cantidad-movimiento,
+.tipo-movimiento,
+.fechaInicial-movimiento {
+  text-align: center;
+}
+
+.controller-list-container-movimientos {
+  width: 99%;
+  background-color: #fff;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0px 5px;
+}
+.info-pages-controller-lists {
+  font-size: 14px;
+}
+.pages-controller-list-container-movimientos {
+  padding: 4px;
+}
+
+/* Estilos para el componente para seleccionar una cuenta bancaria para el apartado de traspaso de tarjetas */
+.container-select-general {
+  background-color: #919191;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 100%;
+}
+.account-selected {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  background: white;
+}
+.account-selected h3 {
+  margin-left: 3px;
+}
+.account-selected p {
+  margin-right: 3px;
+}
+.container-select {
+  width: 100%;
+}
+.table-container-select {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  max-width: 600px;
+}
+.th_2_item_account-number {
+  width: 149px;
+}
+.btn-number-account {
+  width: 149px;
+  height: 27px;
+  border-style: none;
+}
+.controller-list-container-select {
+  width: 99%;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3px;
+  margin-top: 3px;
+  border-radius: 3px;
+}
+
+/* Estilos listado de Cuentas Bancarias */
+.list-tipos-container-Alta-Nueva-CuentaBancaria {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0px;
+}
+.list-tipos-container-Alta-Nueva-CuentaBancaria p {
+  margin-right: 13px;
+}
+.list-tipos-container-Alta-Nueva-CuentaBancaria select {
+  border-radius: 0px;
+  border: 1px solid;
+  font-size: 14px;
+  height: 23px;
+}
+
+.btn-confirm-container-Alta-Nueva-CuentaBancaria {
+  font-size: 15px;
+  margin-top: 11px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 6px;
+}
+
+/* Estilos listado de Tarjetas Bancarias */
+.list-tipos-container-Alta-Nueva-Tarjeta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0px;
+}
+.list-tipos-container-Alta-Nueva-Tarjeta p {
+  margin-right: 13px;
+}
+.list-tipos-container-Alta-Nueva-Tarjeta select {
+  border-radius: 0px;
+  border: 1px solid;
+  font-size: 14px;
+  height: 23px;
+}
+
+
+/* Contenedor Preview Waiting mensaje */
+.container-waitingMessage {
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+}
+.container-waitingMessage *{
+  color: white;
+}
+
+@media (max-width: 999px) {
+  .table-list-container-movimientos th {
+    font-size: 16px;
+  }
+  .table-list-container-movimientos td {
+    font-size: 14px;
+  }
+  .container-movimientos {
+    width: 752px;
+  }
+  .controller-list-container-movimientos{
+    padding: 0px 4px;
+  }
+}
+
+@media (max-width: 785px) {
+  .table-list-container-movimientos th {
+    font-size: 14px;
+  }
+  .table-list-container-movimientos td {
+    font-size: 11px;
+  }
+  .container-movimientos {
+    width: 563px;
+  }
+  .controller-list-container-movimientos{
+    padding: 0px 3px;
+  }
+}
+
+@media (max-width: 596px) {
+  .th_2_movimiento_descripcion,
+  .descripcion-movimiento {
+    display: none;
+  }
+  .controller-list-container-movimientos {
+    width: 98%;
+  }
+  .container-movimientos {
+    width: 305px;
+  }
+  .header-container-movimientos h3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 390px) {
+  .list-tipos-container-Alta-Nueva-Tarjeta{
+    font-size: 13px;
+  }
+  .list-tipos-container-Alta-Nueva-CuentaBancaria{
+    font-size: 13px;
+  }
+  .list-tipos-container-Alta-Nueva-Tarjeta select{
+    font-size: 12px;
+  }
+  .list-tipos-container-Alta-Nueva-CuentaBancaria select{
+    font-size: 12px;
+  }
+}
+

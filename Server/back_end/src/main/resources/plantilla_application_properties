@@ -1,0 +1,21 @@
+# JDBC CONFIG
+spring.application.name=back_end
+spring.datasource.url=jdbc:mysql://URL_SERVER_DB
+spring.datasource.username=USER_DB
+spring.datasource.password=PASSWORD_DB
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA CONFIG
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql: true
+
+
+# JWT CONFIG
+# Poner la clave secreta en base64. Algoritmo HS256 (256 -> bits | 32 bytes)
+jwt.secret=INSERT_HERE_KEY
+
+# Tiempo de expiración del access token en mili-segundos (1 dia)
+jwt.accessTokenExpiration=TIME_EXPIRATION_HERE
+
+# Configuración para el JWT Refresh Token en mili-segundos (7 dias)
+jwt.refreshTokenExpiration=TIME_EXPIRATION_HERE

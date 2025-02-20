@@ -1,0 +1,294 @@
+/* Contenedor principal que se centra en la pantalla */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center;     /* Centra el contenido horizontalmente */
+  background-color: #e0f7fa;
+}
+
+/* Contenedor para el titulo */
+.form-tittle {
+  margin-bottom: 20px;
+}
+
+.form-tittle h3 {
+  font-size: 30px;
+}
+
+/* Contenedor para el ícono encima */
+.form-icon {
+  margin-bottom: 20px;  /* Margen para separar la imagen del formulario */
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+/* Ajustes a la imagen */
+.form-icon img {
+  width: 90px; /* Tamaño de la imagen */
+  height: 90px; /* Tamaño de la imagen */
+  object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  max-height: 600px;  /* Limita la altura máxima del contenedor */
+  overflow-y: auto;   /* Añade scroll si el contenido excede la altura máxima */
+}
+
+/* Resto del CSS que ya tienes para formularios */
+.form-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.toggle-btn {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 50%;
+  transition: background-color 0.3s ease;
+  border-radius: 5px 5px 0 0;
+}
+
+.toggle-btn:hover {
+  background-color: #ddd;
+}
+
+.toggle-btn.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.form-toggle button {
+  margin: 4px;
+  border-radius: 10px;
+}
+
+.form-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: none; /* Los formularios estarán ocultos por defecto */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.form.active {
+  display: block;
+  opacity: 1;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.textbox {
+  margin-bottom: 20px;
+}
+
+.textbox input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.checkbox {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.register-link {
+  font-size: 14px;
+  color: #333;
+}
+
+.register-link a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Media queries para hacer el diseño responsivo */
+
+/* Para pantallas más pequeñas (típicamente móviles) */
+@media (max-width: 768px) {
+  .form-container {
+    width: 70%;   /* El formulario ocupará el 70% del ancho de la pantalla */
+    padding: 30px;
+  }
+
+  .form-tittle h3 {
+    font-size: 24px;   /* Reducir el tamaño de la fuente del título */
+  }
+
+  .form-icon img {
+    width: 70px; /* Reducir tamaño de la imagen */
+    height: 70px; 
+  }
+
+  .toggle-btn {
+    width: 100%;  /* Los botones del formulario se mostrarán uno debajo del otro */
+    margin-bottom: 10px;
+  }
+
+  .toggle-btn.active {
+    width: 100%;
+  }
+
+ 
+}
+
+/* Para pantallas muy pequeñas (típicamente dispositivos móviles en modo retrato) */
+@media (max-width: 480px) {
+  .form-container {
+    width: 70%;   /* Asegura que el formulario tenga el 70% del ancho de la pantalla */
+    padding: 20px;
+  }
+
+  .form-tittle h3 {
+    font-size: 26px;   /* Asegura que el título sea más pequeño en pantallas muy pequeñas */
+  }
+
+  .textbox input {
+    font-size: 14px;  /* Reducir el tamaño de fuente de los inputs */
+  }
+
+  .btn {
+    font-size: 14px;  /* Reducir el tamaño del botón */
+  }
+
+  .register-link {
+    font-size: 12px;  /* Reducir el tamaño del enlace de registro */
+  }
+
+  .form-icon img {
+    width: 75px; /* Reducir aún más el tamaño de la imagen */
+    height: 75px;
+  }
+
+  .form-container {
+    max-height: 395px; /* Limita aún más la altura en pantallas muy pequeñas */
+  }
+}
+
+
+
+/* Estilo general del modal */
+.modal {
+  display: none; /* Inicialmente está oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;  /* Centra el modal horizontalmente */
+  align-items: flex-start;  /* Inicia desde la parte superior */
+  z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+
+/* Estilo para el contenido del modal */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px; /* Ancho de la caja modal */
+  text-align: center;
+  position: relative;  /* Necesario para posicionar la cruz dentro del modal */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-100%);  /* El modal inicia fuera de la pantalla */
+  transition: opacity 0.5s ease, transform 0.5s ease;  /* Transición suave */
+}
+
+/* Cuando el modal tiene la clase 'active', se mueve hacia abajo */
+.modal-content.active {
+  opacity: 1;
+  transform: translateY(20px); /* Desliza el modal hacia abajo */
+}
+
+/* Estilo para el contenedor de la cruz */
+.close-container {
+  position: absolute;
+  top: 10px; /* Mueve la cruz un poco hacia abajo */
+  right: 10px; /* Mueve la cruz a la derecha */
+  cursor: pointer;
+}
+
+/* Estilo de la cruz */
+.close {
+  font-size: 30px;
+  font-weight: bold;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Estilos del texto dentro del modal */
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#content-modal {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.modal-content.active.succes{
+  background-color: #4CAF50;
+}
+.modal-content.active.error{
+  background-color: #F44336;
+}
+
+
+/* Estilo mensajes warning formulario/Login */
+.warning_input{
+  margin: 0px;
+  font-size: 11px;
+  text-align: initial;
+  color: #F44336;
+  display: none;
+}

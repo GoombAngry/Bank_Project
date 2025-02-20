@@ -1,0 +1,533 @@
+.container-tarjetas {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.container-tarjetas.no-interactuable {
+  pointer-events: none;
+}
+/* Contenedor donde se almacena todo */
+.container-tarjetas-firts {
+  width: 60%;
+  height: 100%;
+  background-color: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acciones-generales-tarjetas {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.acciones-generales-tarjetas h2 {
+  margin-bottom: 15px;
+}
+.acciones-generales-tarjetas button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px;
+  font-size: 16px;
+  border-radius: 10px;
+  border-style: none;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+.acciones-generales-tarjetas button img {
+  margin-right: 10px;
+}
+.containerPreview-general {
+  width: 691px;
+  height: 151px;
+  background-color: #333;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: height 0.5s;
+}
+
+.containerPreview-general.show.debito {
+  height: 360px;
+}
+.containerPreview-general.show.credito {
+  height: 408px;
+}
+
+
+/* Estilo para seleccionar tarjeta bancaria del listado */
+.number-tarjeta button {
+  width: 100%;
+  height: 27px;
+  border-style: none;
+}
+
+/* Parte 1 del Preview Tarjeta */
+.container-previewTarjeta {
+  border-radius: 10px;
+  width: 691px;
+  display: flex;
+  flex-direction: column;
+}
+.part1-container-previewTarjeta {
+  display: flex;
+  width: 100%;
+  height: 258px;
+}
+.tarjeta-container-previewTarjeta {
+  height: 100%;
+  width: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerIcon-tarjeta-container-previewTarjeta {
+  width: 94%;
+  display: flex;
+  justify-content: end;
+  display: none;
+}
+.headerIcon-tarjeta-container-previewTarjeta img {
+  cursor: pointer;
+}
+
+.viewtarjeta-tarjeta-container-previewTarjeta {
+  height: 171px;
+  width: 306px;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.viewtarjeta-tarjeta-container-previewTarjeta img {
+  height: 50px;
+  width: 50px;
+}
+.header-viewTarjeta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header-viewTarjeta h2 {
+  font-size: 17px;
+}
+.info-viewTarjeta {
+  width: 100%;
+}
+.number-info-viewTarjeta {
+  margin-bottom: 9px;
+  margin-left: 7px;
+  font-size: 21px;
+}
+.expiration-info-viewTarjeta {
+  font-size: 15px;
+  margin-left: 6px;
+}
+.text-expiration-info-viewTarjeta {
+  font-size: 9px;
+  margin-right: 8px;
+}
+.ownerName-info-viewTarjeta {
+  margin-bottom: 9px;
+  margin-left: 6px;
+}
+.infoTarjeta-container-previewTarjeta {
+  background-color: white;
+  height: 86%;
+  width: calc(100% - 348px);
+  margin: 9px 10px;
+  border-radius: 10px;
+  padding: 9px;
+}
+.infoTarjeta-container-previewTarjeta h3 {
+  font-size: 17px;
+  font-weight: bold;
+}
+.infoTarjeta-container-previewTarjeta p{
+font-size: 14px;
+}
+.infoTarjeta-container-previewTarjeta div {
+  display: flex;
+  justify-content: space-between;
+}
+.infoTarjeta-container-previewTarjeta div img {
+  cursor: pointer;
+  margin-right: 3px;
+}
+/* Parte 2 del Preview Tarjeta */
+.part2-container-previewTarjeta {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.part2-container-previewTarjeta h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.acciones-container-previewTarjeta {
+  width: 92%;
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 13px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 7px;
+  gap: 7px;
+}
+.acciones-container-previewTarjeta button {
+  height: 41px;
+  border-style: none;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+/* Caja emergente para modificar el limite de la tarjeta */
+.container-modificarLimite-tarjeta-Accion {
+  display: flex;
+  flex-direction: column;
+  margin-left: 13px;
+  border-radius: 10px;
+  width: 314px;
+}
+.container-modificarLimite-tarjeta-Accion h3 {
+  text-align: center;
+  font-size: 23px;
+  margin: 10px 0px;
+  color:black;
+}
+.header-modificarLimite-tarjeta-Accion {
+  display: flex;
+  justify-content: end;
+}
+.header-modificarLimite-tarjeta-Accion img {
+  cursor: pointer;
+}
+.content-container-modificarLimite-tarjeta-Accion {
+  display: flex;
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+}
+.content-container-modificarLimite-tarjeta-Accion label {
+  margin-right: 10px;
+}
+
+.btn-confirm-limite-tarjeta {
+  font-size: 16px;
+  margin-top: 11px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #fff;
+}
+/* Caja Emergente para mostrar el contenedor de traspasos */
+.container-traspaso-tarjeta-Accion {
+  margin: -18px -18px -18px -8px;
+  padding: 8px 16px 10px 16px;
+  border-radius: 10px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-close-container-traspaso-tarjeta-Accion {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.header-close-container-traspaso-tarjeta-Accion img {
+  cursor: pointer;
+}
+.header-tittle-container-traspaso-tarjeta-Accion {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+.header-tittle-container-traspaso-tarjeta-Accion h3{
+  color: black;
+}
+
+.container-cantidad-traspaso {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  padding: 7px;
+  border-radius: 6px;
+  margin-top: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-cantidad-traspaso h2 {
+  font-size: 17px;
+  margin-bottom: 0px;
+}
+
+.container-general-info-tarjeta-traspaso {
+  margin-top: 8px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+}
+.tittle-container-general-info-tarjeta-traspaso {
+  font-size: 15px;
+  width: fit-content;
+  padding: 5px 5px;
+  background-color: #fff;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.valueInputTraspasoTarjeta {
+  height: 24px;
+}
+.infoTarjeta-container-general-info-tarjeta-traspaso {
+  width: 100%;
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cajaInfo-infoTarjeta-container-general-info-tarjeta-traspaso {
+  margin: 1px 0px;
+  display: flex;
+  width: 90%;
+}
+.cajaInfo-infoTarjeta-container-general-info-tarjeta-traspaso h4 {
+  font-size: 15px;
+}
+.cajaInfo-infoTarjeta-container-general-info-tarjeta-traspaso p {
+  margin-left: 10px;
+}
+.number-account-selection {
+  width: 149px;
+}
+.btn-realizarTraspaso {
+  margin: 8px auto 0px;
+  width: 42%;
+  height: 32px;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Estilo contenedor DAR DE ALTA TARJETA */
+.container-Alta-Nueva-Tarjeta {
+  background-color: #b0e0e6;
+  margin: -18px -18px -19px -8px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.header-container-Alta-Nueva-Tarjeta {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.header-container-Alta-Nueva-Tarjeta img {
+  cursor: pointer;
+}
+.tittle-container-Alta-Nueva-Tarjeta {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 19px;
+  margin-top: 11px;
+}
+.content-container-Alta-Nueva-Tarjeta {
+  background-color: #fff;
+  width: 336px;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.messageError-container-Alta-Nueva-Tarjeta{
+  font-size: 10px;
+  color: red;
+  display: none;
+}
+.messageError-container-Alta-Nueva-Tarjeta.show{
+  display: block;
+}
+
+.btn-confirm-container-Alta-Nueva-Tarjeta {
+  font-size: 15px;
+  margin-top: 11px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 6px;
+  background-color: #fff;
+}
+@media (max-width: 1401px) {
+  .container-cards-accounts {
+    max-width: 668px;
+  }
+}
+@media (max-width: 1170px) {
+  .container-cards-accounts {
+    max-width: 490px;
+  }
+  .containerPreview-general {
+    width: 496px;
+  }
+  .container-previewTarjeta {
+    width: 496px;
+  }
+  .viewtarjeta-tarjeta-container-previewTarjeta {
+    height: 145px;
+    width: 238px;
+  }
+  .tarjeta-container-previewTarjeta {
+    width: 256px;
+  }
+  .infoTarjeta-container-previewTarjeta {
+    width: calc(100% - 287px);
+    margin: 7px 8px;
+  }
+
+  .infoTarjeta-container-previewTarjeta h3 {
+    font-size: 15px;
+  }
+  .part1-container-previewTarjeta {
+    height: 234px;
+  }
+  .infoTarjeta-container-previewTarjeta div img {
+    width: 20px;
+    height: 20px;
+  }
+  .infoTarjeta-container-previewTarjeta p {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  .containerPreview-general.show.debito {
+    height: 339px;
+  }
+  .containerPreview-general.show.credito {
+    height: 393px;
+  }
+}
+
+@media (max-width: 887px) {
+  .th_2_account,
+  .th_3_account,
+  .th_2_tarjeta,
+  .th_3_tarjeta {
+    display: none;
+  }
+  .operations-account,
+  .type-account,
+  .operations-tarjeta,
+  .type-tarjeta {
+    display: none;
+  }
+}
+@media (max-width: 855px) {
+  .container-tarjetas-firts {
+    width: 100%;
+  }
+}
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 629px) {
+  .th_2_account,
+  .th_3_account,
+  .th_2_tarjeta,
+  .th_3_tarjeta {
+    display: none;
+  }
+  .operations-account,
+  .type-account,
+  .operations-tarjeta,
+  .type-tarjeta {
+    display: none;
+  }
+}
+@media (max-width: 519px) {
+  .containerPreview-general {
+    width: 336px;
+  }
+  .container-cards-accounts {
+    max-width: 324px;
+  }
+  .container-waitingMessage h3 {
+    font-size: 15px;
+  }
+  .container-previewTarjeta {
+    width: 336px;
+  }
+  .tarjeta-container-previewTarjeta {
+    flex-direction: column;
+    width: 336px;
+  }
+  .part1-container-previewTarjeta {
+    flex-direction: column;
+    height: 461px;
+  }
+  .viewtarjeta-tarjeta-container-previewTarjeta {
+    margin: 10px;
+  }
+  .infoTarjeta-container-previewTarjeta {
+    width: 302px;
+  }
+  .containerPreview-general.show.debito {
+    height: 563px;
+  }
+  .containerPreview-general.show.credito {
+    height: 611px;
+  }
+  .infoTarjeta-container-previewTarjeta div img {
+    display: none;
+  }
+  .headerIcon-tarjeta-container-previewTarjeta {
+    display: flex;
+  }
+  .acciones-container-previewTarjeta button {
+    height: 41px;
+    border-style: none;
+    border-radius: 6px;
+    font-size: 11px;
+  }
+  .container-traspaso-tarjeta-Accion {
+    width: 310px;
+  }
+  .container-cantidad-traspaso h2 {
+    font-size: 14px;
+  }
+
+  .th_2_movimiento_descripcion {
+    display: none;
+  }
+  .table-list-container-movimientos .descripcion-movimiento {
+    display: none;
+  }
+  .account-selected h3 {
+    font-size: 14px;
+  }
+  .account-selected p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 390px) {
+  .content-container-Alta-Nueva-Tarjeta{
+    width: 303px;
+  }
+}

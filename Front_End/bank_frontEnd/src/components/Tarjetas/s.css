@@ -1,0 +1,62 @@
+.container-Alta-Nueva-CuentaBancaria {
+  background-color: bisque;
+  margin: -18px -18px -19px -8px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.header-container-Alta-Nueva-CuentaBancaria {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.header-container-Alta-Nueva-CuentaBancaria img {
+  cursor: pointer;
+}
+.tittle-container-Alta-Nueva-CuentaBancaria {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.content-container-Alta-Nueva-CuentaBancaria {
+  background-color: #84fab0;
+  width: 336px;
+  margin: 0px auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.messageError-container-Alta-Nueva-CuentaBancaria{
+  font-size: 10px;
+  color: red;
+  display: none;
+}
+.messageError-container-Alta-Nueva-CuentaBancaria.show{
+  display: block;
+}
+.list-tipos-container-Alta-Nueva-CuentaBancaria {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3px 0px;
+}
+.list-tipos-container-Alta-Nueva-CuentaBancaria p {
+  margin-right: 13px;
+}
+.list-tipos-container-Alta-Nueva-CuentaBancaria select {
+  border-radius: 0px;
+  border: 1px solid;
+  font-size: 14px;
+  height: 23px;
+}
+
+.btn-confirm-container-Alta-Nueva-CuentaBancaria {
+  font-size: 15px;
+  margin-top: 11px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 6px;
+}
