@@ -2,9 +2,10 @@ import "./style.css";
 import IconMenu from "../../assets/images/bars-solid.png";
 import IconBank from "../../assets/images/icon_bank.png";
 import IconCancel from "../../assets/images/x-solid.png";
+import { logout } from "../../utilities/utilitie";
 
 // Cabecera del usuario para navegar por los servicios
-const Header = ({ apartados,setPageMethod }) => {
+const Header = ({ apartados,setPageMethod,goToLogin }) => {
   // Funcion para mostrar/ocultar el menu
   function buttonMenu() {
     const menu = document.getElementById("menu");
@@ -20,6 +21,15 @@ const Header = ({ apartados,setPageMethod }) => {
       document.body.style.overflow = "auto";
     }
   }
+  function handleClickButton(id,component){
+    if(id === 4){
+      // Cerrar sesion
+      logout(document.cookie.split("=")[1]);
+      goToLogin();
+    }else{
+      setPageMethod(component);
+    }
+  }
   return (
     <header>
       <div className="header-tittle-icon">
@@ -28,7 +38,7 @@ const Header = ({ apartados,setPageMethod }) => {
       </div>
       <nav id="desktop-nav">
         {apartados.map((item, index) => (
-          <a key={item.name} href="#" onClick={()=>setPageMethod(item.componente)}>{item.name}</a>
+          <a key={item.name} href="#" onClick={()=>handleClickButton(item.id,item.componente)}>{item.name}</a>
         ))}
       </nav>
       <button id="menu-btn" className="menu-btn" onClick={() => buttonMenu()}>
@@ -36,7 +46,7 @@ const Header = ({ apartados,setPageMethod }) => {
       </button>
       <div id="menu" className="menu hidde">
         {apartados.map((item, index) => (
-           <a key={item.name} href="#" onClick={()=>setPageMethod(item.componente)}>{item.name}</a>
+           <a key={item.name} href="#" onClick={()=>handleClickButton(item.id,item.componente)}>{item.name}</a>
         ))}
       </div>
     </header>

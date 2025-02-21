@@ -42,11 +42,11 @@ const Portal = () => {
   // Cuando se detecte un cambio en la variable userInfo
   useEffect(()=>{
     setHeaderRoutes([
-      { name: "Resumen", componente: <Resumen userInfo={userInfo} cambiarSectionPerfil={changeSectionPerfil}/> },
-      { name: "Cuentas", componente: <Cuentas userInfo={userInfo}/> },
-      { name: "Tarjetas", componente: <Tarjetas userInfo={userInfo}/> },
-      { name: "Perfil", componente: <Perfil userInfo={userInfo} changeUserInfo={setUserInfo}/> },
-      { name: "Cerrar session" },
+      { id:0,name: "Resumen", componente: <Resumen userInfo={userInfo} cambiarSectionPerfil={changeSectionPerfil}/> },
+      { id:1,name: "Cuentas", componente: <Cuentas userInfo={userInfo}/> },
+      { id:2,name: "Tarjetas", componente: <Tarjetas userInfo={userInfo}/> },
+      { id:3,name: "Perfil", componente: <Perfil userInfo={userInfo} changeUserInfo={setUserInfo}/> },
+      { id:4,name: "Cerrar session" },
     ]);
   },[userInfo])
 
@@ -56,7 +56,7 @@ const Portal = () => {
   }
   return (
     <div className="container_main">
-      <Header apartados={headerRoutes} setPageMethod={setPage} />
+      <Header apartados={headerRoutes} setPageMethod={setPage} goToLogin={goToLogin}/>
       {!actualPage ? <Resumen userInfo={userInfo} cambiarSectionPerfil={changeSectionPerfil}/> : actualPage}
       <Footer />
     </div>
